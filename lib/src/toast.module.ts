@@ -1,13 +1,21 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastService } from './toast.service';
 import { ToastMessageComponent } from './toast-message/toast-message.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [ CommonModule ],
   declarations: [ToastMessageComponent],
-  providers: [ToastService]
+  exports: [ToastMessageComponent]
 })
-export class ToastModule { }
+export class ToastModule {
+  public static forRoot(config): ModuleWithProviders {
+    return {
+      ngModule: ToastModule,
+      providers: [
+        ToastService,
+        { provide: 'config', useValue: config }
+      ]
+    };
+  }
+}

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { ToastModule } from 'super-toasty';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastModule.forRoot({ brand: 'AngularFirebase.com' })
   ],
   providers: [],
   bootstrap: [AppComponent]
