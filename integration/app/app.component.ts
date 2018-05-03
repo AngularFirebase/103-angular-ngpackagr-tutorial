@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'app';
 
   constructor(private toast: ToastService) {
-    this.toast.update('Hello World!');
+    this.toast.update('Is this thing working?');
   }
 }
